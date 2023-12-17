@@ -62,7 +62,7 @@ if (document.getElementById('registro-form')){
         modifyFormData(formData);
 
         
-        
+
         try {
             let post_data = await fetch('/register/', {
                 method: 'POST',
@@ -79,7 +79,7 @@ if (document.getElementById('registro-form')){
 
             if (!post_data.ok) {
         
-                throw new Error(generateStringFromObject(data.error));
+                throw new Error(JSON.stringify(data.message));
             }
         
 
@@ -101,7 +101,6 @@ if (document.getElementById('registro-form')){
 
 
         catch(error ) {
-
             Swal.fire({
                 icon: "error",
                 text: error,

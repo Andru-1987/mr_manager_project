@@ -1,3 +1,5 @@
+from django.views import View
+from django.shortcuts import render
 from django.views.generic import TemplateView
 
 
@@ -39,3 +41,10 @@ class RegisterPage(TemplateView):
         "inmutables": inmutables,
         "mutables": mutables,
     }
+
+
+from django.shortcuts import render
+
+class Custom404View(View):
+    def dispatch(self, request, exception):
+        return render(request, '404.html', status=404)

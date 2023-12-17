@@ -1,0 +1,15 @@
+{% extends 'base_index.html' %} {% load static %} {%block content%}
+
+<main class="main__404">
+
+    <div class="img__404">
+        <img src="{% static 'media/mr_manager.png' %}" alt="mr_manager" />
+    </div >
+    <div class="main__404">
+        <h1>404 NOT FOUND</h1>
+        {% include "partials/btn.html" with name="Volver" url='/' %}
+    </div>
+
+</main>
+
+{%endblock%}
