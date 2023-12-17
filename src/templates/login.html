@@ -1,0 +1,24 @@
+{% extends 'base_index.html' %} {% load static %} {%block content%}
+
+{% include 'partials/header.html' %}
+
+<main>
+    <div class="inputs">
+        <form action="{% url 'login' %}" method="POST" id="login-form">
+ 
+            {% csrf_token %}
+
+            {% include 'partials/input.html' with label="ASOCIADO DNI"  name="dni" tag_name="dni" type="number" %}
+            {% include 'partials/input.html' with label="PASSWORD" type="password" name="password" tag_name="password" %}
+            {% include 'partials/input.html' with label="TOKEN" type="password" %}
+            
+            
+            <button type="submit" class="btn btn-primary">
+                <a class="nav-link" >Ingresar</a>
+            </button>
+        </form>
+
+    </div>
+</main>
+
+{%endblock%}

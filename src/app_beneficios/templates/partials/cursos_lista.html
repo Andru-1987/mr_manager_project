@@ -1,0 +1,21 @@
+{% for curso in object_list %}
+<div class="card" >
+    <img src="{{curso.imagen.url}}" title="card image">
+    <div class="card-body">
+      <h3 class="title-card">
+        {{curso.nombre}}
+      </h3>
+      
+      <p>{{curso.sinopsis}}</p>
+      
+      <p>Fecha de inicio: {{curso.inicio}}</p>
+      <p>Valor: ${{curso.precio}}</p>
+    </div>
+
+    <div class="card-footer">
+      <a href="{% url 'curso_detail' curso.id %}">Más Información</a>
+    </div>
+</div>
+{% endfor %}
+
+

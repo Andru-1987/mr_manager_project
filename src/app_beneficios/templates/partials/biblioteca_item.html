@@ -1,0 +1,24 @@
+<img src="{{bibliotecatecnica.imagen.url}}" title="card image">
+<div class="bibliotecatecnica-body">
+    <div>
+        <h3 class="title-card">
+            {{bibliotecatecnica.nombre}}
+        </h3>
+    </div>
+    <div>
+        
+        <p>{{bibliotecatecnica.short|upper}}</p>
+        <hr>
+        <p class="main">{{bibliotecatecnica.full}}</p>
+        <p>Fecha de inicio: {{bibliotecatecnica.fecha}}</p>
+        
+        <hr>
+    </div>
+    <div class="bibliotecatecnica-footer">
+        <a href="/media/{{bibliotecatecnica.archivos}}" download> Descargar archivo</a>
+    </div>
+    <div class="bibliotecatecnica-footer">
+        <a href="{% url 'biblioteca' %}">Volver a biblioteca</a>
+    </div>
+</div>
+

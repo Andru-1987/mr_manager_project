@@ -1,0 +1,21 @@
+<div class="autoridades">
+    {% for autoridad in object_list %}
+    <div class="btn btn-primary autoridad" data-item-id="{{ autoridad.id }}">
+        <a class="nav-link" >
+            {% if autoridad.titulo != "otro" %}
+            {{autoridad.titulo | upper}}
+            {% endif %}
+            
+            {{ autoridad.nombre | upper}} {{ autoridad.apellido | upper}}
+        </a>
+        <a class="nav-link">
+            {% if autoridad.titulo != "otro" %}
+            {{autoridad.cargo | upper}}
+            {% endif %}
+            
+        </a>
+    </div>
+    {% endfor %}
+</div>
+
+{% include './paginator.html' %}

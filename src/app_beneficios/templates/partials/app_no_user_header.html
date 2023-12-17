@@ -1,0 +1,14 @@
+{% load static %}
+<header>
+    <a href="{% url 'index' %}">
+        <img src="{% static './media/mr_manager.png' %}" alt="mr_manager" />
+    </a>
+
+    <div>
+        {% if user.is_authenticated %}
+            <a href="{% url 'profile' %}"> 🟢 {{ user.username }}</a>
+        {% else %}
+            <a href="{% url 'register' %}">Register</a>
+        {% endif %}
+    </div>
+</header>

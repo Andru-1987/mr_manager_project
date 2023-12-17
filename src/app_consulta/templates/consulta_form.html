@@ -1,0 +1,28 @@
+{% extends 'base_index.html' %}
+{% load static %} 
+{%block content%}
+
+{% include 'partials/header.html' with changer=2 %}
+
+<main>
+    
+    <div class="container mt-4">
+        <h1>Hacenos tu consulta</h1>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <!-- Consulta fields -->
+            {{ form.as_p }}
+
+            <!-- ArchivoConsulta fields -->
+            <div class="upload-btn-wrapper">
+                    <h5>Archivos necesarios para la consulta técnica</h5>
+                    <input id="id_archivo" type="file" name="archivo" multiple="multiple"/>
+              </div>
+            
+            <input type="submit" class="btn btn-primary mt-3" value="Realizar la consulta">
+        </form>
+    </div>
+        
+</main>
+
+{%endblock%}

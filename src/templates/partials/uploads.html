@@ -1,0 +1,26 @@
+<div class="uploads border__">
+    <center>
+        <h3 > SELFIE DEL ASOCIADO </h3>
+    </center>
+    {% include 'partials/input.html' with type="file"  tag_name="image" name="image" tag_name="image" %}
+
+    <div class="upload-btn-wrapper">
+        <div class="boton" >
+            <h3>ARCHIVOS  PARA EL ALTA DEL ASOCIADO</h3>
+            Tamaño de archivos máx 5mb
+            <input id="id_file" type="file" name="file" multiple="multiple"/>
+        </div>
+      </div>
+
+      {% include './terms_conditions.html' %}
+
+    <div class="checker">
+        <input type="checkbox" class="input-file" name="accept_terms" id="id_accept_terms" required checked>
+        <label>ACEPTO LOS TERMINOS Y CONDICIONES</label>
+    </div>
+    <div class="checker">
+        <input type="checkbox" class="input-file" name="accept_aigasra_info" id="accept_aigasra_info" required checked>
+        <label>DESEO RECIBIR SUGERENCIAS DE CURSOS Y CAPACITACIONES</label>
+    </div>
+
+</div>

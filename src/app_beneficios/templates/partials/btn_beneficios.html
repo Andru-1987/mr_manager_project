@@ -1,0 +1,14 @@
+<div class="btns">
+    {% url 'autoridades' as autoridades_url %}
+    {% url 'novedades' as novedades_url %}
+    {% url 'curso' as curso_url %}
+    {% url 'profile' as profile_url %}
+
+    {% include 'partials/btn.html' with name='CEO' url=autoridades_url status='active' %}
+    {% include 'partials/btn.html' with name='NOVEDADES' url=novedades_url %}
+
+    {% if user.is_authenticated %}
+    {% include 'partials/btn.html' with name='BENEFICIOS' url=curso_url %}
+    {% include 'partials/btn.html' with name='PERFIL' url=profile_url %}
+    {% endif %}
+</div>

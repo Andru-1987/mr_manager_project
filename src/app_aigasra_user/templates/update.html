@@ -1,0 +1,100 @@
+{% extends 'base_index.html' %}
+{% load static %} 
+{%block content%}
+
+{% include 'partials/header.html' with changer=1 %}
+
+<main>
+    <form id="update-form" method="POST"   enctype="multipart/form-data" >
+        <div>
+
+            <button type="submit" class="btn btn-primary register">
+                <a class="nav-link" >Actualizar</a>
+            </button>
+            
+            <div  class="btn btn-primary register">
+                <a class="nav-link" href="{% url 'profile' %}" >Cancelar edición</a>
+            </div>
+        </div>
+
+
+        {% csrf_token %}
+        <div class="inputs">
+
+            <div class="inmutables">
+                {% for key, input in inmutables.items %}
+        
+                <div class="group">    
+                    <input type="{{input.type}}" class="input-file" id="id_{{key}}" name="{{key}}" readonly  {{input.status}} value={{input.value}} >
+                    <label>{{ input.label | upper }}</label>
+                </div>
+                
+             
+                    
+                {% endfor %}
+            </div>
+
+            <div class="mutables">
+                {% for key, input in mutables.items %}
+                <div class="group">    
+                    {% if key in 'password,password_2' %}
+                    <input type="{{input.type}}" class="input-file" id="id_{{key}}" name="{{key}}"  {{input.status}} value='' >
+                    
+                    {% else %}
+                    <input type="{{input.type}}" class="input-file" id="id_{{key}}" name="{{key}}"  {{input.status}} value="{{input.value}}" >
+                    {% endif %}
+                        
+                    
+                    <label>{{ input.label | upper }}</label>
+                </div>
+                
+
+                {% endfor %}
+
+
+            </div>            
+            
+
+            <div class="uploads">
+                <center>
+                    <h3 > SELFIE DEL ASOCIADO </h3>
+                    {% if user.image %}
+                    <img src="{{user.image.url}}" style="border-radius: 50%; height: 100px; width: 100px;">
+
+                    {% endif %}
+
+                    <input type="file" class="input-file" id="id_file" name="file"  >
+                </center>
+
+                <div class="upload-btn-wrapper">
+                    <div class="boton" >
+                        <h3>ARCHIVOS  PARA EL ALTA DEL ASOCIADO</h3>
+                        Tamaño de archivos máx 5mb
+                        <input id="id_file" type="file" name="file" multiple="multiple"/>
+                    </div>
+                  </div>
+            
+                <div class="checker">
+                
+                    <label>
+                        <a href="">
+                            TERMINOS Y CONDICIONES
+                        </a>
+                    </label>
+                </div>
+                <div class="checker">
+                    <input type="checkbox" class="input-file" name="accept_terms" id="id_accept_terms" hidden checked>
+                    <label>ACEPTO LOS TERMINOS Y CONDICIONES</label>
+                </div>
+                <div class="checker">
+                    <input type="checkbox" class="input-file" name="accept_aigasra_info" id="accept_aigasra_info" readonly checked>
+                    <label>DESEO RECIBIR SUGERENCIAS DE CURSOS Y CAPACITACIONES</label>
+                </div>
+            
+            </div>
+
+        </div>
+    </form>
+</main>
+
+{%endblock%}

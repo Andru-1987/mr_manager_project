@@ -1,0 +1,12 @@
+<div class="sector_beneficios">
+    {% url 'curso' as curso_url %}
+    {% url 'normativa' as normativa_url %}
+    {% url 'biblioteca' as biblioteca_url %}
+
+    {% include 'partials/beneficios_sector.html'  with  url=curso_url  name="cursos"  class_added="beneficio_btn" %}
+    {% include 'partials/beneficios_sector.html'  with  url=normativa_url name="normativas" class_added="beneficio_btn" %}
+    {% include 'partials/beneficios_sector.html'  with  url=biblioteca_url name="biblioteca" class_added="beneficio_btn" %}
+
+    {% include './paginator.html' %}
+</div>
+

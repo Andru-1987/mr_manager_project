@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro&display=swap');
+
+
+@import "./header/header.css";
+@import "./input/input.css";
+@import "./inmutable/style.css";
+@import "./uploads/style.css";
+@import "./uploads/upload.style.css";
+
+
+html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Maven Pro', sans-serif;
+}
+
+body {
+    box-sizing: border-box;
+    height: 100svh;
+    padding: 2rem;
+    gap: 2rem;
+    margin-bottom: 1rem;
+}
+
+
+main {
+        
+    background: rgba(214, 228, 246, 0.15);
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+
+
+
+}
+
+form {
+    height: 100%;
+}
+
+.inputs {
+    display: grid;
+
+    grid-template-areas:
+        "in in  in  up  up"
+        "in in  in  up  up"
+        "mu mu  mu  up  up"
+        "mu mu  mu  up  up"
+        ". re  .  .  ."
+    ;
+
+    gap: 1rem
+}
+
+.inmutables {
+    grid-area: in;
+}
+
+.mutables {
+    grid-area: mu;
+}
+
+.uploads {
+    grid-area: up;
+}
+
+.register{
+    grid-area: re;
+}
+
+
+
+details {
+    border: 1px solid #aaa;
+    border-radius: 1em;
+    padding: 0.5em 0.5em 0;
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+    
+    height: max-content;
+    gap: 1rem;
+
+    width: 50%;
+  }
+  
+details > a {
+    width: max-content;
+}
+
+summary {
+    font-weight: bold;
+    margin: -0.5em -0.5em 0;
+    padding: 0.5em;
+  }
+  
+details[open] {
+    padding: 1em;
+  }
+  
+details[open] summary {
+    border-bottom: 1px solid #aaa;
+    margin-bottom: 0.5em;
+  }
+
+details > button{
+    margin: 1rem;
+  }
+
+.wrapper__btns{
+    padding: 1rem;
+    margin:1rem;
+    gap: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 10px;
+	position: relative;
+	z-index: 2;
+	backdrop-filter: blur(1px);
+    box-shadow: 0 5px 50px rgba(0,0,0,0.03);
+}
+
+
+.sectores__servicios{
+    width: 15rem;
+    margin: 6px;
+
+}
+
+
+
+
+
+
+/* MEDIAQUERIES ================================== */
+
+
+
+@media (width <=700px) {
+
+    body {
+        margin: 0;
+        padding: 0;
+        height: 200svh;
+    }
+
+    main{
+        height: 100%;
+        padding-bottom: 1rem;
+    }
+
+
+    header {
+
+        margin-top: 2rem;
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+
+    header {
+        div {
+            border: transparent;
+        }
+
+        a {
+            font-size: 1rem;
+        }
+
+
+    }
+
+    .inputs {
+        display: grid;
+    
+        grid-template-areas:
+            "in in  in"
+            "in in  in"
+            "mu mu  mu"
+            "mu mu  mu"
+            "up up  up"
+            "up up  up"
+            ".  re  ."
+        ;
+    
+        gap: 1rem
+    }
+
+
+
+    .boton > h3 {
+        font-size: clamp(0.625rem, -0.15rem + 4.5vw, 1.5rem);
+        
+    }
+    
+    .boton > input {
+        font-size: clamp(0.625rem, -0.15rem + 4.5vw, 1.5rem);
+
+    }
+}
+
+
+
+.border__{
+    border-radius: 1rem;
+    border: 1px solid  rgba(214, 228, 246, 0.5);
+}
+
+

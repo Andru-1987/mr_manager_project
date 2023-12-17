@@ -1,0 +1,22 @@
+{% extends 'base_index.html' %} {% load static %} {%block content%}
+
+{% include 'partials/header.html' with changer=1 %}
+
+<main>
+    
+    <form id="registro-form" method="post"  enctype="multipart/form-data" >
+        {% csrf_token %}
+        <div class="inputs">
+
+            {% include 'partials/inmutables.html' %}
+            {% include 'partials/mutables.html' %}
+            {% include 'partials/uploads.html' %} 
+
+            <button type="submit" class="btn btn-primary register">
+                <a class="nav-link" >Registrar</a>
+            </button>
+        </div>
+    </form>
+</main>
+
+{%endblock%}

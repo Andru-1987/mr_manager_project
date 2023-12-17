@@ -1,0 +1,22 @@
+
+{% for normativa in object_list %}
+
+<div class="card" >
+    <div class="card-body">
+      <h3 class="title-card">
+        Normativa: {{normativa.nombre}}
+      </h3>
+      <hr>
+      <p>{{normativa.normativa}}</p>
+      <p>{{normativa.explicacion}}</p>
+      <hr>
+      <p>Fecha de inicio: {{normativa.fecha}}</p>
+      <p> {{normativa.status|upper}}</p>
+      <p>Link: {{normativa.link}}</p>
+    </div>
+
+</div>
+
+{% endfor %}
+
+

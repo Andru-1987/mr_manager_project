@@ -1,0 +1,7 @@
+<div class="mutables border__">
+    {% for key , input in mutables.items %}
+
+    {% include 'partials/input.html' with label=input.label type=input.type name=key tag_name=key %}
+
+    {% endfor %}
+</div>

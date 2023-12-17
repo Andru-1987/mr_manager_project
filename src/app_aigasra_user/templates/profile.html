@@ -1,0 +1,15 @@
+{% extends 'base_index.html' %}
+{% load static %} 
+{%block content%}
+
+{% include 'partials/header.html' with changer=2 %}
+
+<main>
+    
+        {% include './partials/wrapper_btn.html' %} 
+        {% include './partials/inputs_changer.html' %}
+        {% include './partials/uploads_changer.html' %}  
+        
+</main>
+
+{%endblock%}

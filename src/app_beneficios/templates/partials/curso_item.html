@@ -1,0 +1,22 @@
+<img src="{{curso.imagen.url}}" title="card image">
+<div class="curso-body">
+    <div>
+        <h3 class="title-card">
+            {{curso.nombre}}
+        </h3>
+    </div>
+    <div>
+        <p>{{curso.sinopsis}}</p>
+        <p>Dictado por: {{curso.dictado|upper}}</p>
+        <hr>
+        <p class="main">{{curso.detailed}}</p>
+        <p>Fecha de inicio: {{curso.inicio}}</p>
+        <p>Valor: ${{curso.precio}}</p>
+    </div>
+    <div class="curso-footer">
+        <button id="join-course" class="btn btn-outline-success" data-curso-id="{{ curso.id }}">Inscribirse</button>    
+        <button id="leave-course" class="btn btn-outline-danger" data-curso-id="{{ curso.id }}">Darse de baja</button>    
+        <a href="{% url 'curso' %}">Volver a los cursos</a>
+    </div>
+</div>
+

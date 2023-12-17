@@ -1,0 +1,26 @@
+{% load static %}
+<header>
+    <a href="{% url 'index' %}">
+        <img src="{% static './media/mr_manager.png' %}" alt="mr_manager" />
+    </a>
+
+    <div>
+        {% if changer == 1 %}
+        <a href="{% url 'register' %}">REGISTER</a>
+        <a href="{% url 'login' %}">LOGIN</a>
+
+
+        {% elif changer == 2 %}
+            
+            {% if user.image %}
+            <img src="{{user.image.url}}" style="border-radius: 50%; height: 50px; width: 50px;">
+            {% endif %}
+
+            <a href="{% url 'logout' %}"> Log Out</a>
+
+        {% else %}
+        <a href="{% url 'login' %}">LOGIN</a>
+        <a href="{% url 'register' %}">REGISTER</a>
+        {% endif %}
+    </div>
+</header>

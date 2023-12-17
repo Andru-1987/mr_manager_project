@@ -1,0 +1,14 @@
+<div class="novedades">
+    {% for novedad in object_list %}
+    <button class="btn btn-primary novedad" data-item-id="{{ novedad.id }}">
+        <a class="nav-link">
+            {{ novedad.corto }}
+        </a>
+        <a class="nav-link">
+           Fecha de acualizacion: {{novedad.edicion}}
+        </a>
+    </button>
+    {% endfor %}
+</div>
+
+{% include './paginator.html' %}

@@ -1,0 +1,17 @@
+{% for biblioteca in object_list %}
+<div class="card" >
+    <img src="{{biblioteca.imagen.url}}" title="card image">
+    <div class="card-body">
+      <h3 class="title-card">
+        {{biblioteca.nombre}}
+      </h3>
+      <p>{{biblioteca.short}}</p>
+
+      <p>Fecha: {{biblioteca.fecha}}</p>
+    </div>
+
+    <div class="card-footer">
+      <a href="{% url 'biblioteca_detail' biblioteca.id %}">Más Información</a>
+    </div>
+</div>
+{% endfor %}

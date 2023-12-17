@@ -1,0 +1,29 @@
+<div class="wrapper__btns">
+
+    <div class="btn btn-primary sectores__servicios">
+        <a href="{% url 'update' user.dni %}" class="nav-link">Actualizar datos</a>
+    </div>
+
+    <div class="btn btn-primary sectores__servicios">
+        <a href="{% url 'curso' %}" class="nav-link">Volver a Cursos</a>
+    </div>
+    
+    <!-- Servicios del usuario -->
+
+    <div id="cursos" class="btn btn-primary sectores__servicios">
+        <a  class="nav-link">Cursos</a>
+    </div>            
+    
+    <div id="consultas" class="btn btn-primary sectores__servicios ">
+        <a  class="nav-link">Consultas</a>
+    </div>            
+
+    <div id="crear_consultas" class="btn btn-success sectores__servicios ">
+        <a  class="nav-link" href="{% url 'crear_consulta' %}">Realizar consulta</a>
+    </div>            
+    
+    <div id="cuotas" class="btn btn-primary sectores__servicios">
+        <a  class="nav-link">Cuotas</a>
+    </div>            
+    
+</div>

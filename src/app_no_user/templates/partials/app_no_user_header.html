@@ -1,0 +1,27 @@
+{% load static %}
+<header>
+    <a href="{% url 'index' %}">
+        <img src="{% static './media/mr_manager.png' %}" alt="mr_manager" />
+    </a>
+
+    <div>
+        {% if user.is_authenticated %}
+
+            {% if user.image  %}
+                <img src="{{user.image.url}}" style="border-radius: 50%; height: 50px; width: 50px;">
+            {% endif %}
+
+            {% if not user.nombre  %}
+            <a href="{% url 'profile' %}"> {{ user.dni }} </a>    
+
+            {% else %}
+            <a href="{% url 'profile' %}"> {{ user.nombre |upper }} {{ user.apellido | upper }}</a>
+            
+            {% endif %}        
+            
+            <a href="{% url 'logout' %}"> Log Out</a>
+        {% else %}
+            <a href="{% url 'register' %}">Register</a>
+        {% endif %}
+    </div>
+</header>

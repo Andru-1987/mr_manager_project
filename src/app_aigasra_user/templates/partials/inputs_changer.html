@@ -1,0 +1,35 @@
+<div class="inputs">
+
+    <div class="inmutables">
+        <div>
+            <img src="{{user.image.url}}"  class="user__profile">
+            <span>
+                Status: 
+                {% if user.is_staff %}
+                    <b>Staff Aigasra</b>
+                {% else %}
+                    <b> Asociado Aigasra </b>
+                {% endif %}
+            </span>
+        </div>
+        
+        {% for key, input in inmutables.items %}
+        <div class="group">    
+            
+            <h6> <b> {{ input.label | upper }}</b></h6>
+            <p>{{ input.value | upper }}</p>
+        </div>
+        {% endfor %}
+    </div>
+
+
+    <div class="mutables">
+        {% for key, input in mutables.items %}
+            <div class="group">    
+                <h6> <b> {{ input.label | upper }} </b></h6>
+                <p>{{ input.value | upper }}</p>
+            </div>
+        {% endfor %}
+    </div>
+
+</div>

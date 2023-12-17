@@ -1,0 +1,55 @@
+header {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 1rem;
+
+}
+
+
+header img {
+    width: 15rem;
+
+}
+
+header div {
+    display: flex;
+    gap: 2rem;
+
+    justify-content: center;
+    align-items: center;
+
+    margin-right: 2rem;
+
+    padding: 0 2rem 0;
+
+    height: 100%;
+
+    position: relative;
+    /* top: 15px; */
+}
+
+header div a {
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+
+
+
+header div a:first-child {
+    font-size: 2rem;
+}
+
+header div a:first-child::after {
+    content: "";
+    position: absolute;
+    height: 3rem;
+    width: 1px;
+    background: #d2dbff;
+    margin-left: 1rem;
+    rotate: 5deg;
+
+}
