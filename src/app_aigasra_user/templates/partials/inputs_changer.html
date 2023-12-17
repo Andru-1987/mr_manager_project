@@ -2,7 +2,9 @@
 
     <div class="inmutables">
         <div>
+            {% if user.image %}
             <img src="{{user.image.url}}"  class="user__profile">
+            {% endif %}
             <span>
                 Status: 
                 {% if user.is_staff %}

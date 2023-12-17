@@ -3,10 +3,11 @@ from django.urls import path, include
 
 from django.contrib.auth.views import LogoutView
 from django.conf import settings
+from django.conf.urls import handler404
 from django.conf.urls.static import static
 
 
-from .views import LandingPage
+from .views import LandingPage , Custom404View
 
 
 from app_aigasra_user.views import AigasraUserCreateView
@@ -40,3 +41,6 @@ urlpatterns = [
 
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
+handler404 = Custom404View.as_view()

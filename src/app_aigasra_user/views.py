@@ -95,6 +95,7 @@ class AigasraUserCreateView(CreateView):
 
 
     def post(self, request, *args, **kwargs):
+        
         if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
   
             try:
@@ -117,12 +118,13 @@ class AigasraUserCreateView(CreateView):
                     
 
 
-                    return JsonResponse({'status': 'success', "ok":True,"dni":user.dni})
+                    return JsonResponse({'status': 'success', "ok":True,"dni":user.dni ,"message":"Se ha creado exitosamente"})
                 
+
                     
             except Exception as e:
                 print(e)
-                return JsonResponse({'error': str(e)}, status=400)
+                return JsonResponse({'message': str(e)}, status=400)
         
         return JsonResponse({'error': 'Invalid request'}, status=400)
     
