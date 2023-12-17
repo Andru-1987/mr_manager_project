@@ -69,7 +69,7 @@ Si es necesario de manera local o si es pago el servicio, hacer un import de alg
 Al ser un proyecto basado en renderización del tipo in box, puede llegar a tener algunas problematicas tales como el manejo de los staticos, por lo que se trabaja con whitenoise y pillow, que son dependecias que nos ayuda a manejar las imagenes.
 
 
-### [DEPLOY DE MR MANAGER](https://mr-manager-project.onrender.com)
+### [DEPLOY DE MR MANAGER](http://mrmanager.pythonanywhere.com/)
 
 ![Alt text](image-3.png)
 
