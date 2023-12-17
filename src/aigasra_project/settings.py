@@ -18,7 +18,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get("DEBUG")
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["*"] + os.environ.get("ALLOWED_HOSTS")
 
 
 # Application definition
@@ -127,7 +127,7 @@ STATIC_URL = "static/"
 
 STATICFILES_DIRS = [BASE_DIR / "static"]
 
-# STATIC_ROOT = BASE_DIR / "staticfiles"
+STATIC_ROOT = BASE_DIR / "staticfiles"
 
 
 # Default primary key field type
@@ -142,18 +142,13 @@ MEDIA_URL =  '/media/'
 AUTH_USER_MODEL = 'app_aigasra_user.AigasraUser'
 
 
-# AUTHENTICATION_BACKENDS = [
-#     'app_aigasra_user.backends.AigasraUserAuthBackend',
-#     'django.contrib.auth.backends.ModelBackend',
-# ]
-
 
 LOGIN_REDIRECT_URL = '/aigasra/novedades/'
 LOGOUT_REDIRECT_URL = "/"
 
 
-SESSION_EXPIRE_AFTER_LAST_ACTIVITY = True #esto hace que expire despues de un tiempo de inactividad en la aplicacion
+SESSION_EXPIRE_AFTER_LAST_ACTIVITY = True 
 
-SESSION_EXPIRE_SECONDS = 600 # 1 hora = 3600
+SESSION_EXPIRE_SECONDS = 600 
 
 SESSION_TIMEOUT_REDIRECT = '/'
