@@ -1,9 +1,13 @@
 from django.db import models
-from app_aigasra_user.models import AigasraUser
+from app_manager_user.models import ManagerUser
 
 class Curso(models.Model):
+
+    class Meta:
+        db_table = "app_beneficio_curso"
+
     OPCIONES_DICTADO = (
-        ('aigasra', 'Aigasra'),
+        ('manager', 'Manager'),
         ('privado', 'Privado'),
         ('estatal', 'Estatal'),
         ('otros', 'Otros'),
@@ -20,12 +24,12 @@ class Curso(models.Model):
     inicio = models.DateTimeField(auto_now_add=True)
     duracion = models.DurationField(default='90 days') 
     status = models.CharField(max_length=50, choices=CHOICE_STATUS, default='activo')
-    dictado = models.CharField(max_length=50, choices=OPCIONES_DICTADO, default='aigasra')
+    dictado = models.CharField(max_length=50, choices=OPCIONES_DICTADO, default='manager')
     precio = models.DecimalField(max_digits=10, decimal_places=2, default=0.00)
-    sinopsis = models.CharField(max_length=50, default='Curso generado por Aigasra.')
+    sinopsis = models.CharField(max_length=50, default='Curso generado por Mr Manager C.O.')
     detailed = models.TextField(default='')
 
-    user = models.ManyToManyField(AigasraUser,related_name="usuarios_cursos",blank=True,null=True)
+    user = models.ManyToManyField(ManagerUser,related_name="usuarios_cursos",blank=True,null=True)
 
     def __str__(self) -> str:
         return f"{self.nombre}, duracion:{self.duracion} costo: {self.precio}"
@@ -46,6 +50,10 @@ class Curso(models.Model):
 
 class Normativa(models.Model):
 
+    class Meta:
+        db_table = "app_beneficios_normativa"
+
+
     OPCIONES_STATUS = (
         ('actualizado', 'Actualizado'),
         ('vigente', 'Vigente'),
@@ -56,7 +64,7 @@ class Normativa(models.Model):
     fecha = models.DateField()
     status = models.CharField(max_length=50, choices=OPCIONES_STATUS, default='vigente')
     explicacion = models.TextField(default='')
-    link = models.URLField(default='https://www.aigasra.com.ar/educativa')
+    link = models.URLField(default='https://www.manager.com.ar')
 
     def __str__(self) -> str:
         return f"{self.nombre}, fecha:{self.fecha} status: {self.status}"
@@ -74,6 +82,9 @@ class Normativa(models.Model):
 
 
 class BibliotecaTecnica(models.Model):
+    class Meta:
+        db_table = "app_beneficios_biblioteca_tecnica"
+
     ARCHIVOS_PERMITIDOS = (
         ('pdf', 'PDF'),
         ('jpg', 'JPG'),

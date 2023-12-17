@@ -5,7 +5,6 @@ from django.shortcuts import get_object_or_404
 from django.views import View
 from django.http import JsonResponse
 from .models import Curso
-from app_aigasra_user.models import AigasraUser  
 
 
 curso = Builder(Curso)

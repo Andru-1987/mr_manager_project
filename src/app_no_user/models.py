@@ -7,7 +7,7 @@ from django.utils import timezone
 class Contacto(models.Model):
 
     class Meta:
-        db_table = "contacto"
+        db_table = "app_no_user_contacto"
 
     CARGO_CHOICES = [
         ('director', 'Director'),
@@ -55,9 +55,9 @@ class Contacto(models.Model):
 
 class Novedad(models.Model):
     class Meta:
-        db_table = "novedad"
+        db_table = "app_no_user_novedad"
 
-    corto = models.CharField(max_length=100,default="Articulo de Aigasra")
+    corto = models.CharField(max_length=100,default="Articulo de Manager")
     largo = models.CharField(max_length=255)
     edicion = models.DateTimeField(default=timezone.now)
     creado = models.ForeignKey(Contacto, on_delete=models.CASCADE)
