@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro&display=swap');
+
+@import url("header.style.e8a9c33cbcb3.css");
+@import url("full_items.style.90fbfb469947.css");
+
+html {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Maven Pro', sans-serif;
+}
+
+body {
+    flex-direction: column;
+
+}
+
+
+body{
+    box-sizing: border-box;
+
+    height: 100svh;
+    display :grid;
+    gap: 2rem;
+    grid-template-areas: 
+
+    "h  h   h"
+    "h  h   h"
+    "a  b   b"
+    "a  b   b"
+    "a  b   b"
+    "a  b   b"
+    "a  b   b"
+    ;
+    grid-template-columns: repeat(3,1fr) ;
+
+    
+}
+
+header{
+    grid-area: h;
+    
+}
+
+
+.items-full{
+    grid-area: a;
+}
+
+.items-detail{
+    grid-area: b;
+}
+
+
+.bio_detail{
+    min-width:200px ;
+    height: 100%;
+}
+
+
+
+/* MEDIAQUERIES ================================== */
+
+@media (width <=700px) {
+
+    body {
+        margin: 0;
+        padding: 1rem;
+        
+        grid-template-areas: 
+        "h"
+        "h"
+        "a"
+        "a"
+        "a"
+        "b"
+        "b"
+        "b"
+        ;
+        grid-template-columns: 1fr;
+        height: 200svh;
+    }
+
+    header{
+        display: flex;
+        flex-direction: column;
+    }
+
+    body > .items-full , .items-detail {
+        flex-direction: column;
+        flex-wrap: wrap;
+        min-width: 300px;
+
+        box-sizing:border-box;
+        width: 100%;
+        margin: 0;
+        height: 100%;
+        
+    }
+
+
+    .items-detail #specific-item{
+        width: 100%;
+        padding: 10px;
+        margin: 0;
+    }
+
+
+    .items-detail > #specific-item > .banner_container > div >  .banner{
+        aspect-ratio: 16/7;
+        width: 100%;
+        border-radius: 12px;
+        margin-bottom: 15px;
+        position: relative;
+        max-height: 320px;
+        object-fit:cover;
+        object-position: center;
+        background:rgba(37,207,242,1 ) ;
+        border: none;
+    }
+    
+
+}
+
+
+
+
+.border__{
+    border-radius: 1rem;
+    border: 1px solid  rgba(214, 228, 246, 0.5);
+}
+
+.specific-admin {
+    height: 100%;
+}

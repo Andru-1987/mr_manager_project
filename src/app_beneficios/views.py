@@ -9,7 +9,7 @@ from app_aigasra_user.models import AigasraUser
 
 
 curso = Builder(Curso)
-curso = curso.add_list_values("curso.html",{"page":"cursos","scripts":["./js/enroll.js"]})
+curso = curso.add_list_values("curso.html",{"page":"cursos"})
 curso = curso.add_cols_json(
             "nombre"
             ,"inicio"

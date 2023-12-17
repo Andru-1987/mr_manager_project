@@ -1,0 +1,32 @@
+.upload-btn-wrapper {
+  position: relative;
+  flex-grow: 2;
+  height: 100%;
+  padding: 2rem;
+  text-align: center;
+}
+
+.boton {
+
+  background-color: transparent;
+  padding: 8px 20px;
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: bold;
+  opacity: .7;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.uploads .upload-btn-wrapper>input[type=file] {
+
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+
+}

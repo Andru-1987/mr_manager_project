@@ -1,0 +1,426 @@
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro&display=swap');
+
+
+@import url("./header/header.ee489e8e088a.css");
+
+html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Maven Pro', sans-serif;
+}
+
+body {
+    padding: 2rem;
+    height: 100svh;
+}
+
+main {
+    display: grid;
+
+    grid-template-areas:
+        "btns btns"
+        "inps inps"
+        "inps inps"
+        "uplo uplo"
+        "uplo uplo"
+    ;
+
+    background: rgba(214, 228, 246, 0.2);
+    border-radius: 1rem;
+    padding: 2rem;
+    gap: 2rem;
+}
+
+
+main > .wrapper__btns{
+    grid-area: btns;
+    box-sizing: border-box;
+}
+
+main > .inputs {
+    grid-area: inps;
+    box-sizing: border-box;
+}
+
+
+main > .uploads{
+    grid-area: uplo;
+    box-sizing: border-box;
+    height: 100%;
+}
+
+
+
+/* INPUT ================================== */
+
+main > .inputs {
+    display: grid;
+    grid-template-areas:
+    "in in  mu mu"
+    "in in  mu mu"
+    ;
+    
+    min-width: 400px;
+    width: 100%;
+    gap: 2rem; 
+    
+}
+
+main > .inputs .inmutables{grid-area: in;}
+main > .inputs .mutables{grid-area: mu;} 
+
+
+main > .inputs .inmutables,
+main > .inputs .mutables {
+    display: grid;
+    gap: 1rem;
+    grid-auto-rows: 5rem;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 10rem), 1fr));
+    padding: 2rem 2rem 2rem 2rem;
+    border: 1px solid  rgba(214, 228, 246, 0.5);
+    border-radius: 1rem;
+    
+}
+
+
+main > .inputs .inmutables > div,
+main > .inputs .mutables > div {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    
+    
+}
+
+
+main > .inputs .inmutables > div:first-child{
+    display: block;
+}
+
+
+.border__{
+    
+    border-radius: 1rem;
+    border: 1px solid  rgba(214, 228, 246, 0.5);
+}
+
+
+
+.inputs  .groups {
+    margin: 0 auto;
+    max-width: 16rem;
+    position: relative;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+
+.inputs  .groups > h6, 
+.inputs  .groups > p {
+    width: 16rem;
+}
+
+
+.user__profile{
+    border-radius: 50%;
+    height: 75px;
+    aspect-ratio: 1;
+    background: aqua;
+    margin-bottom: 10px;
+    
+}
+
+.user__profile ~ span {
+    font-size:  1rem;
+}
+
+
+main > .uploads{
+    min-width: 200px;
+    text-overflow: clip;
+    height: 20%; 
+}
+
+details {
+    border: 1px solid #aaa;
+    border-radius: 1em;
+    padding: 0.5em .5rem .5em .5rem;
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
+    justify-content: center;
+    
+    height: max-content;
+    gap: 1rem;
+    
+    box-sizing: border-box;
+    min-width: 100px;
+    
+    text-overflow: clip;
+    
+    margin-top: 20px;
+  }
+
+  
+  details > a {
+      width: max-content;
+    }
+
+    summary {
+        padding: 1rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    
+    details[open] {
+        padding: 1em;
+    }
+    
+    details[open] summary {
+        border-bottom: 1px solid #aaa;
+        margin-bottom: 2em;
+    }
+    
+    
+    details > div{
+        padding: 2rem;
+    }
+    
+    
+    .wrapper__btns{
+        padding: 1rem 0 0.5rem 0;
+    margin:1rem 0 0.5rem 0;
+    gap: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 10px;
+	position: relative;
+	z-index: 2;
+	backdrop-filter: blur(1px);
+    box-shadow: 0 5px 50px rgba(0,0,0,0.03);
+    min-width: 200px;
+    box-sizing: content-box;
+}
+
+
+.sectores__servicios{
+    min-width: 5rem;
+    width: 15rem;
+    margin: 6px;
+    
+}
+
+
+
+
+.uploads{
+    display: grid;
+    
+    grid-template-areas: "file  changer changer changer";
+    
+    gap: 2rem;
+    box-sizing: border-box;
+
+    
+}
+
+.uploads > .files__section,
+.uploads > .changer__section{
+    min-width: 150px;  
+    padding: 2rem;  
+}
+
+.uploads > .files__section{
+    grid-area: file;
+}
+.uploads > .changer__section{
+    grid-area: changer;
+}
+
+
+.changer__section{
+    overflow-y: scroll;
+    overflow-y: scroll;
+    scrollbar-width: none; 
+    -ms-overflow-style: none;
+}
+
+.changer__section::-webkit-scrollbar {
+    display: none;
+  }
+  
+  
+  
+  .table{
+      border-radius: 1rem;
+      overflow: hidden;
+    }
+
+    
+    
+    
+/* MEDIAQUERIES ================================== */
+
+@media (width <=1000px) {    
+    
+    body{
+        height: 200svh;
+    }
+    
+    main{
+        height: 100%;
+    }
+    
+    main > .inputs {
+        display: grid;
+        
+        grid-template-areas:
+        "in"
+        "mu"
+        ;
+        
+        gap: 2rem
+    }
+    
+
+    main > .uploads{
+        display: grid;
+    
+        grid-template-areas: 
+        "file"
+        "changer"
+        ;
+    
+        grid-template-columns: repeat(1,1fr);
+        grid-template-rows: repeat(2,1fr);
+
+
+        min-width: 200px;
+        height: 70%; 
+        text-overflow: clip;
+    }
+
+
+    
+}
+    
+
+
+@media (width <=600px) {
+    
+        body {
+            margin: 0;
+            padding: 0;
+            height: 300svh;
+            width: 100%;
+        }
+
+        main{
+            height: 100%;
+        }
+    
+        header {
+    
+            margin-top: 2rem;
+    
+            /* height: 30%; */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+    
+    
+        header {
+            div {
+                border: transparent;
+            }
+    
+            a {
+                font-size: 1rem;
+            }
+    
+    
+        }
+        
+        .wrapper__btns{
+            min-width: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            margin: 0;
+        }
+
+        .wrapper__btns > div{
+            height: 4rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        main > .uploads{
+            display: grid;
+        
+            grid-template-areas: 
+            "file"
+            "changer"
+            ;
+        
+            grid-template-columns: repeat(1,1fr);
+            grid-template-rows: repeat(2,1fr);
+    
+    
+            min-width: 200px;
+            width: 100%;
+            text-overflow: clip;
+
+        }
+
+
+        .files__section > section{
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+
+        .uploads > .files__section,
+        .uploads > .changer__section{
+            min-width: 150px;  
+            padding: 2rem .5rem 2rem 0.5rem;  
+    }
+    }  
+
+
+    /* CONSULTAS */
+
+.grilla_consultas{
+
+    display: grid;
+    gap: 2rem;
+    grid-auto-rows: 6rem;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 16rem), 1fr));
+    padding: 2rem 1rem 2rem 1rem;
+}
+
+.grilla_consultas > .consulta > div {
+    height: 100%;
+    width: 100%; 
+    padding: 2rem;
+}
+
+
+.files__uploaded{
+    display: grid;
+    gap: 2rem;
+    grid-auto-rows: 6rem;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 10rem), 1fr));
+    padding: 2rem 1rem 2rem 1rem;
+
+    overflow-y: scroll;
+}

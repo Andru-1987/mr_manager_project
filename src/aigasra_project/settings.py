@@ -37,10 +37,11 @@ INSTALLED_APPS = [
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
+    "whitenoise.runserver_nostatic",
     "django.contrib.staticfiles",
 ]
 
-INSTALLED_APPS += CUSTOM_APPS +["whitenoise.runserver_nostatic"]
+INSTALLED_APPS += CUSTOM_APPS
 
 
 CUSTOM_MIDDLEWARE = ["app_aigasra_user.middleware_cors.CorsMiddlewareMixin"]
@@ -143,19 +144,22 @@ STATIC_URL = "/static/"
 
 STATICFILES_DIRS = [BASE_DIR / "static"]
 
-STATIC_ROOT = BASE_DIR / "staticfiles"
+
+# STATIC_ROOT = None if DEBUG else BASE_DIR / "staticfiles"
+
+STATIC_ROOT = BASE_DIR / "staticfiles" 
 
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
-
+# STATICFILES_STORAGE = "django.contrib.staticfiles.storage.ManifestStaticFilesStorage"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-MEDIA_ROOT = BASE_DIR   / 'media'
-MEDIA_URL =  '/media/'
+MEDIA_ROOT =  BASE_DIR / 'media'
+MEDIA_URL  =  '/media/'
 
 
 AUTH_USER_MODEL = 'app_aigasra_user.AigasraUser'

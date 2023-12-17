@@ -1,0 +1,206 @@
+.items-full{
+    display: grid;
+    grid-template-areas:
+    
+    "btns   btns"
+    "autoridades    autoridades"
+    "autoridades    autoridades"
+    "autoridades    autoridades"
+    "autoridades    autoridades"
+    "paginator  paginator"
+    ;
+    
+}
+
+
+.items-full > div:nth-child(2){
+    grid-area: autoridades;
+
+}
+
+.items-full > .btns{
+    grid-area: btns;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    
+    gap: 20px;
+    
+}
+
+.items-full > .btns > button {
+    
+    padding: 1.2rem;
+    min-width: 150px;
+    width: 200px;
+    max-width: 300px;
+
+}
+
+
+
+
+.autoridades , .novedades{
+    
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    width: 100%;
+    align-content: center;
+    justify-content: center;
+    padding: 1rem;
+    
+}
+
+
+.autoridades > .autoridad 
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 1.2rem;
+    width: 12rem;
+    min-width: 150px;
+    max-width: 13rem;
+    height: 6rem;
+}
+
+
+.novedades > .novedad {
+    display: flex;
+    flex-direction: column;
+    min-width: 150px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 1.2rem;
+    width: 200px;
+    max-width: 250px;
+    aspect-ratio: 16/9;
+}
+
+
+
+.autoridades > .autoridad:not(:hover) ,
+.novedades > .novedad:not(:hover) 
+{
+    background-color: rgba(255, 255, 255, .2);
+    color: #0d6efd;
+}
+
+
+
+/* --------------------------------- */
+
+.items-detail{
+    
+
+    display: flex;
+    flex-direction: column;
+    
+    box-sizing: border-box;
+
+    background: rgba(214, 228, 246, 0.15);
+    backdrop-filter: blur(2px);
+
+    border-radius: 1rem;
+
+    color: #0d6efd;
+
+
+    height: 100%;
+
+    
+}
+
+
+.items-detail > #specific-item {
+    
+    margin: 1rem;
+    height: 100%;
+
+    box-sizing: border-box;
+}
+
+.items-detail > #specific-item >div{
+    padding: 1rem;
+    margin: 1rem;
+    box-sizing: border-box;
+}
+
+
+
+.items-detail > #specific-item > .circle_container {
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+
+}
+
+.items-detail > #specific-item > .circle_container > .circle{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: #999;
+}
+
+
+
+
+.items-detail > #specific-item > .banner_container {
+    width: 100%;
+}
+
+.items-detail > #specific-item > .banner_container > div {
+    
+    width: 100%;
+    height: 200px;
+    overflow-y: hidden;
+
+}
+
+.items-detail > #specific-item > .banner_container > div >  .banner{
+    box-sizing: border-box;
+    width: 100%;
+    object-fit: fill;
+    background-color: #999;
+    object-position: 0 -100px;
+}
+
+
+
+.items-detail > #specific-item  .editor__footer h5{
+    font-size: 1rem;
+
+}
+
+.paginator{
+    grid-template-columns: paginator;
+    height: 35px;
+    margin: 2rem;
+}
+
+.paginator ul{
+    height: 100%;
+    min-width: 150px;
+    width: 300px;
+    max-width: 500px;
+}
+
+.paginator span{
+    font-size: clamp(0.5rem, -0.15rem + 4.5vw, 1rem);
+}
+
+
+/* .paginator li,
+.paginator ul,
+.paginator nav
+{
+    height: 100%;
+} */

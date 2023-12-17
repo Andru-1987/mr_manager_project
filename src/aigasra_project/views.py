@@ -1,3 +1,4 @@
+from django.shortcuts import render
 from django.views import View
 from django.shortcuts import render
 from django.views.generic import TemplateView
@@ -43,8 +44,7 @@ class RegisterPage(TemplateView):
     }
 
 
-from django.shortcuts import render
 
 class Custom404View(View):
     def dispatch(self, request, exception):
-        return render(request, '404.html', status=404)
+        return render(request, '404.html',status=404)

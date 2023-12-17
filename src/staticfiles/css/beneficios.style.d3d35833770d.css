@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro&display=swap');
+@import url("./beneficios.style.d4594069748d.css");
+@import url("./header.style.e8a9c33cbcb3.css");
+@import url("./curso.style.8a9d2ab83a0f.css");
+@import url("./curso_detail.style.65ce0c2af6eb.css");
+@import url("./curso_item.style.2e5a561d4d5e.css");
+@import url("./biblioteca_item.style.9e012ec4997c.css");
+
+
+*,
+html {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Maven Pro', sans-serif;
+}
+
+body {
+    flex-direction: column;
+}
+
+
+body{
+    height: 100svh;
+    display :grid;
+    gap: 10px;
+    grid-template-areas: 
+
+    "h  h   h"
+    "a  b   b"
+    "a  b   b"
+    "a  b   b"
+    "a  b   b"
+    "a  b   b"
+    "a  b   b"
+    ;
+    grid-template-columns: repeat(3,1fr);
+    margin:0 2rem 0 0;
+}
+
+header{
+    grid-area: h;
+}
+
+.items-full{
+    grid-area: a;
+
+}
+
+.items-detail{
+    grid-area: b;
+}
+
+
+
+
+
+.items-full{
+    display: grid;
+    gap: 2rem;
+    grid-template-areas:
+    "btns   btns"
+    "beneficios    beneficios"
+    "beneficios    beneficios"
+    "beneficios    beneficios"
+    "beneficios    beneficios"
+    ;
+}
+
+
+.items-full > div:nth-child(2){
+    grid-area: beneficios;
+}
+
+.items-full > .btns{
+    grid-area: btns;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;   
+}
+
+
+
+
+/* MEDIAQUERIES ================================== */
+
+@media (width <=600px) {
+
+    body {
+        margin: 0;
+        padding: 1rem;
+        gap: 2rem;
+        grid-template-areas: 
+        "h"
+        "h"
+        "a"
+        "a"
+        "a"
+        "b"
+        "b"
+        "b"
+        ;
+        grid-template-columns: 1fr;
+        height: 200svh;
+    }
+
+
+
+    header{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .items-detail{
+        width: 100%;
+        margin: 0;
+    }
+}
