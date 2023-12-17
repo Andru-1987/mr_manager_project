@@ -55,3 +55,12 @@ Se establece la duración de las sesiones, redireccionamiento después del inici
 
 ## PASOS DEL DEPLOY A RENDER 
 
+- Creacion de la base de datos en Render >> 
+![Alt text](image.png)
+Si es necesario de manera local o si es pago el servicio, hacer un import de algún dump, siendo la version de PG 12 
+```
+  psql databasename < data_base_dump
+
+```
+
+- Creación de la WebApp:
