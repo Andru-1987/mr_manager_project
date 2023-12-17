@@ -19,12 +19,12 @@ Sistema de gestión de usuarios es una plataforma dinámica que impulsa el creci
 Se definen aplicaciones personalizadas y las aplicaciones de Django como:
 - `app_no_user` : Para manejar personas que no tienen acción dentro del proyecto, son agentes externos, asi como noticias y novedades
 - `app_beneficios`: Son los beneficios de los usuarios registrados, Cursos, Biblioteca Técina y Normativas
-- `app_aigasra_user` : Son los usuarios,(cuentan con el nombre anterior del proyecto)
+- `app_manager_user` : Son los usuarios,(cuentan con el nombre anterior del proyecto)
 - `app_consulta` : Son los que nos permiten hacer consultas directamente con alguno de los representantes del proyecto.
-- `app_cuota`
+- `app_cuota` :  Son valores de cuptas que se otorgan de manera mensual o por tipo de curso o data extra que se realiza tanto como una posible consulta
 
 ## Middleware Personalizado
-Se agrega middleware personalizado, como el middleware de Cors (`app_aigasra_user.middleware_cors.CorsMiddlewareMixin`), a la lista de middlewares.
+Se agrega middleware personalizado, como el middleware de Cors (`app_manager_user.middleware_cors.CorsMiddlewareMixin`), a la lista de middlewares.
 
 ## Configuración de Base de Datos
 Se utiliza una base de datos cuyos detalles se obtienen de las variables de entorno (`os.getenv`). Se permite la configuración para múltiples motores de base de datos.
@@ -47,4 +47,14 @@ Se establece la duración de las sesiones, redireccionamiento después del inici
 
 ---
 
-**Nota:** Asegúrate de revisar y ajustar los valores de configuración según los requisitos específicos del proyecto.
+**Nota:** Asegúrate de revisar y ajustar los valores de configuración si es que se desea usar el proyecto en alguna parte fuera de argentina
+
+
+<div style="position: relative; width: 100%; height: 0; padding-top: 56.2225%;
+ padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
+ border-radius: 8px; will-change: transform;">
+  <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
+    src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAF3MhHxBHo&#x2F;view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
+  </iframe>
+</div>
+<a href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAF3MhHxBHo&#x2F;view?utm_content=DAF3MhHxBHo&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener">Mr. Manager Software</a> by anderson vega
