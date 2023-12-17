@@ -5,6 +5,9 @@ set -o errexit  # exit on error
 pip install -r requirements.txt
 
 mkdir  staticfiles media
+
+python manage.py sqlflush # solo por para propositos generales de deploy
+
 python manage.py collectstatic --no-input
 python manage.py makemigrations
 python manage.py migrate
