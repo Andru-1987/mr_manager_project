@@ -23,7 +23,7 @@ print(f"Debug:  {DEBUG}")
 if os.environ.get("ALLOWED_HOSTS",None):
     ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(",")
 else:
-    ALLOWED_HOSTS=["*"]
+    ALLOWED_HOSTS=["mrmanager.pythonanywhere.com"]
 
 print(f"HOSTS:  {ALLOWED_HOSTS}")
 
