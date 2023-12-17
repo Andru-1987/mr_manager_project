@@ -6,7 +6,7 @@ pip install -r requirements.txt
 
 mkdir  staticfiles media
 
-python manage.py flush # solo por para propositos generales de deploy
+python manage.py flush --no-input # solo por para propositos generales de deploy
 
 python manage.py collectstatic --no-input
 python manage.py makemigrations
