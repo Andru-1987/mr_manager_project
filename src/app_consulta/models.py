@@ -12,6 +12,7 @@ class Consulta(models.Model):
     titulo_consulta = models.CharField(max_length=255)
     fecha_consulta = models.DateTimeField( editable=False, auto_now_add=True)
     temas_relacionados = models.CharField(max_length=255)
+    email_contacto = models.EmailField(verbose_name="Email de contacto",blank=True,null=True)
     consulta_texto = models.TextField()
 
     class Meta:
