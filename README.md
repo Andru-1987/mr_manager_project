@@ -64,3 +64,6 @@ Si es necesario de manera local o si es pago el servicio, hacer un import de alg
 ```
 
 - Creación de la WebApp:
+![Alt text](image-1.png)
+
+Al ser un proyecto basado en renderización del tipo in box, puede llegar a tener algunas problematicas tales como el manejo de los staticos, por lo que se trabaja con whitenoise y pillow, que son dependecias que nos ayuda a manejar las imagenes.
