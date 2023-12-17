@@ -2,6 +2,8 @@
 
 set -o errexit  # exit on error
 
+pip install --user pythonanywhere
+mkvirtualenv --python=python3 venv
 
 pip install -r requirements.txt
 
