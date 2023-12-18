@@ -157,22 +157,3 @@ main>div:nth-child(2) {
     }
 }
 
-
-.main__404{
-    height: 100%;
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    flex-wrap: wrap;
-
-}
-
-.body__404{
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;    
-}

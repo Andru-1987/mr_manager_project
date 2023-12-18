@@ -3,25 +3,25 @@ from django.contrib.auth.models import User
 from django.http import JsonResponse
 from django.contrib.auth.forms import AuthenticationForm
 
-from .models import AigasraUser
+from .models import ManagerUser
 
 
-class AigasraUserForm(forms.ModelForm):
+class ManagerUserForm(forms.ModelForm):
     
     class Meta:
-        model = AigasraUser
+        model = ManagerUser
         fields = '__all__'
         exclude = ('groups', 'user_permissions')  
 
 
-class AigasraUserUpdateForm(forms.ModelForm):
+class ManagerUserUpdateForm(forms.ModelForm):
     class Meta:
-        model = AigasraUser
+        model = ManagerUser
         fields = '__all__' 
         exclude = ( 'groups',
                     'user_permissions' )
 
-class AigasraUserLoginForm(forms.Form):
+class ManagerUserLoginForm(forms.Form):
     
     dni = forms.CharField()
     password = forms.CharField(widget=forms.PasswordInput)

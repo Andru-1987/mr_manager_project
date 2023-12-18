@@ -1,6 +1,6 @@
 from django.db import models
 from django.utils import timezone
-from app_aigasra_user.models import AigasraUser
+from app_manager_user.models import ManagerUser
 
 class Cuota(models.Model):
     MESES = [
@@ -28,14 +28,15 @@ class Cuota(models.Model):
     anno_cuota = models.IntegerField(default=timezone.now().year)
     mes_cuota_vencimiento = models.IntegerField(choices=MESES)
     anno_cuota_vencimiento = models.IntegerField(default=timezone.now().year)
-    descripcion = models.CharField(max_length=255,default=f"Cuota Aigasra Sociedad")
+    descripcion = models.CharField(max_length=255,default=f"Cuota Manager Sociedad")
     valor_cuota = models.DecimalField(max_digits=10, decimal_places=2, default=1000)
     moneda = models.CharField(max_length=15, choices=MONEDAS, default='ARS')
-    usuario = models.ForeignKey(AigasraUser, on_delete=models.CASCADE, blank=True,null=True)
+    usuario = models.ForeignKey(ManagerUser, on_delete=models.CASCADE, blank=True,null=True)
 
     class Meta:
         verbose_name = 'Cuota'
         verbose_name_plural = 'Cuotas'
+        db_table = "app_cuotas"
 
 
     def __str__(self):

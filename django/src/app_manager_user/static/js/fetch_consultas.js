@@ -1,7 +1,7 @@
 const modalItem = (data) => {
     const {
         id,
-        titulo_consulta = "Aigasra mensaje",
+        titulo_consulta = "Manager mensaje",
         fecha_consulta,
         temas_relacionados = "Sin tema relacionado",
         receptor_consulta = "Sin nombre",

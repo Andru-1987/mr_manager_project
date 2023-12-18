@@ -4,7 +4,9 @@ from django.contrib.auth.models import BaseUserManager , AbstractBaseUser
 from django.contrib.auth.models import AbstractUser, Group, Permission, PermissionsMixin
 
 
-class AigasraUserBase(models.Model):
+class ManagerUserBase(models.Model):
+    class Meta:
+        db_table = "app_manager_user_mr_manager"
 
     telefono = models.CharField(max_length=15, verbose_name="Teléfono",blank=True,null=True)
     celular = models.CharField(max_length=15, verbose_name="Celular",blank=True,null=True)
@@ -19,14 +21,14 @@ class AigasraUserBase(models.Model):
     dir_registracion = models.TextField(verbose_name="Dir. de Registración",blank=True,null=True)
     fecha_nacimiento = models.DateField(verbose_name="Fecha de Nacimiento",blank=True,null=True)
     accept_terms = models.BooleanField(default=True, verbose_name="Aceptar términos y condiciones",blank=True,null=True)
-    accept_aigasra_info = models.BooleanField(default=True, verbose_name="Aceptar recibir información de Aigasra",blank=True,null=True)
+    accept_manager_info = models.BooleanField(default=True, verbose_name="Aceptar recibir información de Manager",blank=True,null=True)
     image = models.ImageField(upload_to='user_images/', verbose_name='Image',blank=True,null=True)
 
     def get_attribute(self, attr_name):
         return getattr(self, attr_name, None)
 
 
-class AigasraUserManager(BaseUserManager):
+class ManagerUserManager(BaseUserManager):
     def create_user(self, dni, password=None):
         """
         Creates and saves a User with the given email and password.
@@ -72,9 +74,9 @@ class AigasraUserManager(BaseUserManager):
 
 
 
-class AigasraUser(AigasraUserBase,AbstractBaseUser,PermissionsMixin):
+class ManagerUser(ManagerUserBase,AbstractBaseUser,PermissionsMixin):
     
-    objects = AigasraUserManager()
+    objects = ManagerUserManager()
     is_active = models.BooleanField(default=True)
     staff = models.BooleanField(default=False) # a admin user; non super-user
     admin = models.BooleanField(default=False) # a superuser
@@ -128,9 +130,12 @@ class AigasraUser(AigasraUserBase,AbstractBaseUser,PermissionsMixin):
 
 
 class UserFile(models.Model):
+    class Meta:
+        db_table = "app_manager_user_user_files"
+
     file = models.FileField(upload_to='user_files/')
     uploaded_at = models.DateTimeField(auto_now_add=True)
-    user = models.ForeignKey(AigasraUser, on_delete=models.CASCADE, related_name='files')
+    user = models.ForeignKey(ManagerUser, on_delete=models.CASCADE, related_name='files')
 
     def __str__(self):
         return f"File uploaded by {self.user} at {self.uploaded_at}"
@@ -143,7 +148,7 @@ class UserFile(models.Model):
 
 
 class CustomUserPermissions(models.Model):
-    user = models.OneToOneField(AigasraUser, on_delete=models.CASCADE, related_name='custom_user_permissions')
+    user = models.OneToOneField(ManagerUser, on_delete=models.CASCADE, related_name='custom_user_permissions')
 
     class Meta:
         permissions = [

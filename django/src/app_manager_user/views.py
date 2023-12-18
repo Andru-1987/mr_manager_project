@@ -16,13 +16,13 @@ from django.contrib.auth import authenticate, login
 
 
 from .models import UserFile
-from .models import AigasraUser , UserFile
-from .forms import AigasraUserForm , AigasraUserLoginForm , AigasraUserLoginForm, AigasraUserUpdateForm
+from .models import ManagerUser , UserFile
+from .forms import ManagerUserForm , ManagerUserLoginForm , ManagerUserLoginForm, ManagerUserUpdateForm
 
 
 
 
-class AigasraUserLoginView(LoginView):
+class ManagerUserLoginView(LoginView):
 
     http_method_names = ['get', 'post']
     template_name = 'login.html'
@@ -32,7 +32,7 @@ class AigasraUserLoginView(LoginView):
 
 
     def post(self, request, *args, **kwargs):
-        form = AigasraUserLoginForm(request.POST)
+        form = ManagerUserLoginForm(request.POST)
 
         if form.is_valid():
 
@@ -61,9 +61,9 @@ class AigasraUserLoginView(LoginView):
 
 
 
-class AigasraUserCreateView(CreateView):
-    model = AigasraUser
-    form_class = AigasraUserForm
+class ManagerUserCreateView(CreateView):
+    model = ManagerUser
+    form_class = ManagerUserForm
     # fields = '__all__'
     template_name = 'register.html'
 
@@ -99,7 +99,7 @@ class AigasraUserCreateView(CreateView):
         if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
   
             try:
-                user_form = AigasraUserForm(request.POST,request.FILES)
+                user_form = ManagerUserForm(request.POST,request.FILES)
 
                 print(user_form.errors)
 
@@ -132,8 +132,8 @@ class AigasraUserCreateView(CreateView):
 
 
 
-class AigasraUserProfileView(LoginRequiredMixin, DetailView):
-    model = AigasraUser
+class ManagerUserProfileView(LoginRequiredMixin, DetailView):
+    model = ManagerUser
     template_name = 'profile.html'
     context_object_name = 'user'  
 
@@ -188,11 +188,11 @@ class AigasraUserProfileView(LoginRequiredMixin, DetailView):
 
 
 
-class AigasraUserUpdateView(UpdateView):
+class ManagerUserUpdateView(UpdateView):
 
-    model = AigasraUser
+    model = ManagerUser
     template_name = 'update.html'
-    form_class=AigasraUserUpdateForm
+    form_class=ManagerUserUpdateForm
     
     mutables: dict = {
         "telefono": {"label": "telefono", "type": "tel"},
@@ -241,9 +241,9 @@ class AigasraUserUpdateView(UpdateView):
         if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
             
             try:
-                user = get_object_or_404(AigasraUser, dni=kwargs['pk'])
+                user = get_object_or_404(ManagerUser, dni=kwargs['pk'])
 
-                user_form = AigasraUserUpdateForm(request.POST, request.FILES, instance=user)
+                user_form = ManagerUserUpdateForm(request.POST, request.FILES, instance=user)
 
 
                 if user_form.is_valid():

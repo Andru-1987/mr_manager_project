@@ -1,9 +1,9 @@
 from django.apps import AppConfig
 
 
-class AppAigasraUserConfig(AppConfig):
+class AppManagerUserConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'app_aigasra_user'
+    name = 'app_manager_user'
 
     def ready(self):
-        import app_aigasra_user.signals 
+        import app_manager_user.signals 

@@ -6,10 +6,25 @@
         <img src="{% static 'media/mr_manager.png' %}" alt="mr_manager" />
     </div >
     <div class="main__404">
-        <h1>404 NOT FOUND</h1>
-        {% include "partials/btn.html" with name="Volver" url='/' %}
+        <h1>Ooopss!!   404 NOT FOUND</h1>
+        {% include "partials/btn.html" with name="Volver ala página principal" url='/' %}
     </div>
 
 </main>
 
+<style>
+    .main__404 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        text-align: center;
+    }
+
+    .img__404 {
+        height: 500px;
+        width: 500px;
+    }
+</style>
 {%endblock%}

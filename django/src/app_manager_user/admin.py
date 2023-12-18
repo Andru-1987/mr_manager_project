@@ -1,9 +1,9 @@
 from django.contrib import admin
-from .models import AigasraUser , UserFile
+from .models import ManagerUser , UserFile
 
 # Register your models here.
-@admin.register(AigasraUser)
-class AigasraUserAdmin(admin.ModelAdmin):
+@admin.register(ManagerUser)
+class ManagerUserAdmin(admin.ModelAdmin):
     pass
 
 # Register your models here.

@@ -10,7 +10,7 @@ def populate():
             fecha=date.today(),  # Set the date as needed
             status=choice(['actualizado', 'vigente']),
             explicacion=f'Explicación de la normativa {i+1}',
-            link=f'https://www.aigasra.com.ar/normativa/{i+1}'
+            link=f'https://www.manager.com.ar/normativa/{i+1}'
         )
 
     for i in range(20):

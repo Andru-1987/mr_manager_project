@@ -29,7 +29,7 @@ print(f"HOSTS:  {ALLOWED_HOSTS}")
 
 # Application definition
 
-CUSTOM_APPS = ["app_no_user","app_beneficios","app_aigasra_user","app_consulta","app_cuota"]
+CUSTOM_APPS = ["app_no_user","app_beneficios","app_manager_user","app_consulta","app_cuota"]
 
 INSTALLED_APPS = [
     "django.contrib.admin",
@@ -37,14 +37,19 @@ INSTALLED_APPS = [
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
+    "whitenoise.runserver_nostatic",
     "django.contrib.staticfiles",
 ]
 
 INSTALLED_APPS += CUSTOM_APPS
 
 
+CUSTOM_MIDDLEWARE = ["app_manager_user.middleware_cors.CorsMiddlewareMixin"]
+
+
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -62,7 +67,7 @@ PASSWORD_HASHERS = [
     "django.contrib.auth.hashers.ScryptPasswordHasher",
 ]
 
-ROOT_URLCONF = "aigasra_project.urls"
+ROOT_URLCONF = "manager_project.urls"
 
 TEMPLATES = [
     {
@@ -80,11 +85,19 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = "aigasra_project.wsgi.application"
+WSGI_APPLICATION = "manager_project.wsgi.application"
 
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'mr_manager.sqlite3'),
+#     }
+# }
+
 
 
 DATABASES = {
@@ -139,23 +152,29 @@ STATIC_URL = "/static/"
 
 STATICFILES_DIRS = [BASE_DIR / "static"]
 
-STATIC_ROOT = BASE_DIR / "staticfiles"
 
+# STATIC_ROOT = None if DEBUG else BASE_DIR / "staticfiles"
+
+STATIC_ROOT = BASE_DIR / "staticfiles" 
+
+
+STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
+# STATICFILES_STORAGE = "django.contrib.staticfiles.storage.ManifestStaticFilesStorage"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-MEDIA_ROOT = BASE_DIR   / 'media'
-MEDIA_URL =  '/media/'
+MEDIA_ROOT =  BASE_DIR / 'media'
+MEDIA_URL  =  '/media/'
 
 
-AUTH_USER_MODEL = 'app_aigasra_user.AigasraUser'
+AUTH_USER_MODEL = 'app_manager_user.ManagerUser'
 
 
 
-LOGIN_REDIRECT_URL = '/aigasra/novedades/'
+LOGIN_REDIRECT_URL = '/manager/novedades/'
 LOGOUT_REDIRECT_URL = "/"
 
 

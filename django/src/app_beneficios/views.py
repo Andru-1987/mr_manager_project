@@ -5,11 +5,10 @@ from django.shortcuts import get_object_or_404
 from django.views import View
 from django.http import JsonResponse
 from .models import Curso
-from app_aigasra_user.models import AigasraUser  
 
 
 curso = Builder(Curso)
-curso = curso.add_list_values("curso.html",{"page":"cursos","scripts":["./js/enroll.js"]})
+curso = curso.add_list_values("curso.html",{"page":"cursos"})
 curso = curso.add_cols_json(
             "nombre"
             ,"inicio"
