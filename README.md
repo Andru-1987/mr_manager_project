@@ -1,3 +1,6 @@
+![Alt text](./reporte_imagenes/ifts18-bg.png)
+---
+
 # Configuración del Proyecto Django - MR Manager
 
 ## Descripción
@@ -56,7 +59,7 @@ Se establece la duración de las sesiones, redireccionamiento después del inici
 ## PASOS DEL DEPLOY A RENDER 
 
 - Creacion de la base de datos en Render >> 
-![Alt text](image.png)
+![Alt text](./reporte_imagenes/image.png)
 Si es necesario de manera local o si es pago el servicio, hacer un import de algún dump, siendo la version de PG 12 
 ```
   psql databasename < data_base_dump
@@ -64,7 +67,7 @@ Si es necesario de manera local o si es pago el servicio, hacer un import de alg
 ```
 
 - Creación de la WebApp:
-![Alt text](image-1.png)
+![Alt text](./reporte_imagenes/image-1.png)
 
 Al ser un proyecto basado en renderización del tipo in box, puede llegar a tener algunas problematicas tales como el manejo de los staticos, por lo que se trabaja con whitenoise y pillow, que son dependecias que nos ayuda a manejar las imagenes.
 
@@ -72,9 +75,9 @@ Al ser un proyecto basado en renderización del tipo in box, puede llegar a tene
 ### [DEPLOY DE MR MANAGER RENDER ](https://mr-manager-akku.onrender.com/)
 ### [DEPLOY DE MR MANAGER PYTHONANYWHERE](http://mrmanager.pythonanywhere.com/)
 
-![Alt text](image-3.png)
+![Alt text](./reporte_imagenes/image-3.png)
 
-![Alt text](image-2.png)
+![Alt text](./reporte_imagenes/image-2.png)
 
 
 

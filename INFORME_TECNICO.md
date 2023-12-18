@@ -1,4 +1,4 @@
-![Alt text](ifts18-bg.png)
+![Alt text](./reporte_imagenes/ifts18-bg.png)
 
 TRABAJO PRACTICO REALIZADO POR:
 ---
