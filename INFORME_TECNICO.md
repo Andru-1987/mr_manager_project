@@ -1,3 +1,10 @@
+![Alt text](ifts18-bg.png)
+
+TRABAJO PRACTICO REALIZADO POR:
+---
+* ALUMNO: ANDERSON MICHEL OCAÑA TORRES
+* DOCENTE A CARGO: ALBERTO CAMPAGNA
+
 # Sistema de Gestión Mr Manager: Documentación Técnica
 
 ## Introducción
@@ -8,7 +15,7 @@ Mr Manager es un sistema integral de gestión de cursos, novedades y biblioteca 
 - Biblioteca Técnica: Almacena información relevante sobre cursos y novedades.
 - Personalización: Proporciona información personalizada a los usuarios y empresas inscritos.
 
-## Tecnologías Utilizadas
+## Tecnologías UtilizadasS
 
 ### Frontend
 - Desarrollo basado en Django aprovechando las capacidades de HTML, CSS, JS, JQuery & AJAX.
@@ -44,3 +51,5 @@ El sistema adopta una arquitectura monolítica modular para aprovechar la separa
 - Stack Tecnológico: Django & Python, HTML5, CSS, Bootstrap, SweetAlert, Ajax, JS y JQuery.
 - Herramientas de desarrollo: Visual Studio Code.
 - Sistemas Operativos: Linux y Windows.
+
+
