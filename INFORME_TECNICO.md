@@ -15,7 +15,7 @@ Mr Manager es un sistema integral de gestión de cursos, novedades y biblioteca 
 - Biblioteca Técnica: Almacena información relevante sobre cursos y novedades.
 - Personalización: Proporciona información personalizada a los usuarios y empresas inscritos.
 
-## Tecnologías UtilizadasS
+## Tecnologías Utilizadas
 
 ### Frontend
 - Desarrollo basado en Django aprovechando las capacidades de HTML, CSS, JS, JQuery & AJAX.
