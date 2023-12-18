@@ -37,26 +37,27 @@ INSTALLED_APPS = [
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
-    "whitenoise.runserver_nostatic",
+    # "whitenoise.runserver_nostatic",
     "django.contrib.staticfiles",
 ]
 
 INSTALLED_APPS += CUSTOM_APPS
 
 
-CUSTOM_MIDDLEWARE = ["app_manager_user.middleware_cors.CorsMiddlewareMixin"]
+CUSTOM_MIDDLEWARE = ["app_manager_user.cors.CorsMiddlewareMixin"]
 
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
-    "whitenoise.middleware.WhiteNoiseMiddleware",
+    # "whitenoise.middleware.WhiteNoiseMiddleware",
+    # 'corsheaders.middleware.CorsMiddleware',
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-]
+] + CUSTOM_MIDDLEWARE
 
 
 PASSWORD_HASHERS = [
@@ -158,7 +159,7 @@ STATICFILES_DIRS = [BASE_DIR / "static"]
 STATIC_ROOT = BASE_DIR / "staticfiles" 
 
 
-STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
+# STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
 # STATICFILES_STORAGE = "django.contrib.staticfiles.storage.ManifestStaticFilesStorage"
 
 # Default primary key field type
@@ -184,6 +185,18 @@ SESSION_EXPIRE_SECONDS = 600
 
 SESSION_TIMEOUT_REDIRECT = '/'
 
-CSRF_TRUSTED_ORIGINS = ['https://*','https://*.127.0.0.1','http://*']
+CSRF_TRUSTED_ORIGINS = ['https://localhost:80'] 
+CSRF_TRUSTED_ORIGINS += ['https://*','https://*.127.0.0.1','http://*']
 CSRF_TRUSTED_ORIGINS += os.environ.get("DJANGO_CSRF").split(",")
 CSRF_TRUSTED_ORIGINS = set(CSRF_TRUSTED_ORIGINS)
+
+print(CSRF_TRUSTED_ORIGINS)
+
+
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:80',
+    'http://localhost:80/*',
+    'https://*.app.github.dev',
+    'https://localhost:80',
+    'https://localhost:80/*',
+]

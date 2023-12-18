@@ -27,6 +27,14 @@ function getCSRFToken() {
 }
 
 
+function getCookie(name) {
+    const cookieValue = document.cookie.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)');
+    return cookieValue ? cookieValue.pop() : '';
+}
+
+const csrfToken = getCookie('csrftoken') ;
+
+
 function generateStringFromObject(obj) {
     let result = '';
     if (object){
@@ -68,7 +76,7 @@ if (document.getElementById('registro-form')){
                 method: 'POST',
                 body: formData,
                 headers: {
-                    'X-CSRFToken':  getCSRFToken(),
+                    'X-CSRFToken': csrfToken,
                     'X-Requested-With': 'XMLHttpRequest'
                     
                 }

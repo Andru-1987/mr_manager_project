@@ -1,6 +1,7 @@
 #!/usr/bin/sh
 
 
+
 mkdir media staticfiles
 
 python manage.py makemigrations 

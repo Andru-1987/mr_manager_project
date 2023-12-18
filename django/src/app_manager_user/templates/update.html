@@ -63,7 +63,7 @@
 
                     {% endif %}
 
-                    <input type="file" class="input-file" id="id_file" name="file"  >
+                    <input type="file" class="input-file" id="id_image" name="image"  >
                 </center>
 
                 <div class="upload-btn-wrapper">
@@ -73,15 +73,9 @@
                         <input id="id_file" type="file" name="file" multiple="multiple"/>
                     </div>
                   </div>
-            
-                <div class="checker">
-                
-                    <label>
-                        <a href="">
-                            TERMINOS Y CONDICIONES
-                        </a>
-                    </label>
-                </div>
+                  
+                {% include './partials/terms_conditions.html' %}
+
                 <div class="checker">
                     <input type="checkbox" class="input-file" name="accept_terms" id="id_accept_terms" hidden checked>
                     <label>ACEPTO LOS TERMINOS Y CONDICIONES</label>
