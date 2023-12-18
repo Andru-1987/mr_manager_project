@@ -13,5 +13,5 @@ DJANGO_SUPERUSER_PASSWORD=admin \
 DJANGO_SUPERUSER_EMAIL="andru.ocatorres@gmail.com" \
 python manage.py createsuperuser --dni 11111111 --noinput
 
-gunicorn aigasra_project.wsgi:application --bind "0.0.0.0:8000"
+gunicorn manager_project.wsgi:application --bind "0.0.0.0:8000"
 
